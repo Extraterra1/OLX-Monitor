@@ -16,8 +16,6 @@ Using [Bash](https://git-scm.com/download/win) is reccomended
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Clone the repo
    ```sh
    git clone https://github.com/Extraterra1/OLX-Monitor.git
@@ -51,6 +49,7 @@ Time to get this started. Just open your console and type the next command
 After that you'll start to see your console light up.
 
 The bot updates every 10 minutes by defaul, you can change this in index.js by altering the "interval" variable.
+
 You can also just add a INTERVAL variable on your .env file
 
 ```js
