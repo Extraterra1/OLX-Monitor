@@ -10,7 +10,7 @@ const app = new Telegraf(process.env.BOT_KEY);
 const chatId = process.env.CHAT_ID;
 
 //TIME BETWEEN SEARCHES
-const interval = 600000;
+const interval = process.env.INTERVAL || 600000;
 
 const SPECIAL_CHARS = ["\\", "_", "*", "[", "]", "(", ")", "~", "`", ">", "<", "&", "#", "+", "-", "=", "|", "{", "}", ".", "!"];
 const escapeMarkdown = (text) => {

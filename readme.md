@@ -10,7 +10,8 @@ Hola! este es un simple bot para monitorear los productos recién listados en el
 
 ### Prerequisites
 
-You obviously need [Node.JS](https://nodejs.org/en/download/current) to get this to work
+You obviously need [Node.JS](https://nodejs.org/en/download/current) to get this to work.
+
 Using [Bash](https://git-scm.com/download/win) is reccomended
 
 ### Installation
@@ -49,7 +50,8 @@ Time to get this started. Just open your console and type the next command
 
 After that you'll start to see your console light up.
 
-The bot updates every 10 minutes by defaul, you can change this in index.js by altering the "interval" variable
+The bot updates every 10 minutes by defaul, you can change this in index.js by altering the "interval" variable.
+You can also just add a INTERVAL variable on your .env file
 
 ```js
 const interval = 600000;
