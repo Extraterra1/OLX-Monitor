@@ -30,7 +30,12 @@ for (const url of urls) {
   setInterval(() => {
     (async () => {
       //get search term
-      const term = decodeURIComponent(url.match(/q-(.*?)(?=\/)/)[1]).replace("-", " ");
+      let term;
+      if (url.match(/q-(.*?)(?=\/)/)) {
+        term = decodeURIComponent(url.match(/q-(.*?)(?=\/)/)[1]).replace("-", " ");
+      } else {
+        term = "no term";
+      }
       console.log(`Fetching ${term}`);
       const response = await axios.get(url);
       const html = response.data;
@@ -64,9 +69,9 @@ for (const url of urls) {
         if (index === -1) {
           items.push(itemToPush);
           console.log(`Inserted ${title} ${price}€`);
-          if (items.length > urls.length) {
+          if (items.length > urls.length * 5) {
             const caption = `🔴 *NEW* listing\n\n🗨️${escapeMarkdown(title)}\n💰*${price}€*\n`;
-            const escapedCaption = caption + `🔗[OLX](${url})`;
+            const escapedCaption = caption + `🔗[OLX](${url})\nSearch Term: "${term}"`;
             app.telegram.sendPhoto(chatId, { url: img }, { caption: escapedCaption, parse_mode: "MarkdownV2" });
           }
         }
